@@ -1,43 +1,34 @@
 import React from "react";
+import youTubeLogo from "../assests/youTubeLogo.png";
+import fbLogo from "../assests/fbLogo.png";
+import spotifyLogo from "../assests/spotifyLogo.png"
+import classes from "./Footer.module.css"
 
-const Footer=()=>{
-    return(
-        <div class="blockcode">
- 
-
-  <footer class="page-footer shadow">
-    <div class="d-flex flex-column mx-auto py-5" style={{width: "80%"}}>
-      <div class="d-flex flex-wrap justify-content-between">
-        <div>
-          <a href="/" class="d-flex align-items-center p-0 text-dark">
-            <img alt="logo" src="../img/logo.png" width="30px" />
-            <span class="ms-3 h5 font-weight-bold">Devwares</span>
-          </a>
-          <p class="my-3" style={{width: "250px"}}>
-            We are creating High Quality Resources and tools to Aid developers during the
-            developement of their projects
-          </p>
-          <span class="mt-4">
-            <button class="btn btn-dark btn-flat p-2">
-              <i class="fa fa-facebook"></i>
-            </button>
-            <button class="btn btn-dark btn-flat p-2">
-              <i class="fa fa-twitter"></i>
-            </button>
-            <button class="btn btn-dark btn-flat p-2">
-              <i class="fa fa-instagram"></i>
-            </button>
-          </span>
-        </div>
-        
-        
-        
-      </div>
-      <small class="text-center mt-5">&copy; Milind, 2023. All rights reserved.</small>
-    </div>
-  </footer>
-</div>
-    )
-}
+const Footer = () => {
+    return (
+        <footer className={classes.footer}>
+            <div className={classes["footer-title"]}>The Generics</div>
+            <div className={classes["footer-icons"]}>
+                <ul>
+                    <li>
+                        <a href="https://www.youtube.com">
+                            <img src={youTubeLogo} alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://spotify.com">
+                            <img src={spotifyLogo} alt="" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com">
+                            <img src={fbLogo} alt="" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    );
+};
 
 export default Footer;

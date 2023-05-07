@@ -1,0 +1,56 @@
+.cart_cancel_btn {
+    position: absolute;
+    height: 2rem;
+    width: 1.5rem;
+    right: 5%;
+}
+.subtitle_name1 {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    width: 45%;
+}
+.subtitle_name2 {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    width: 30%;
+}
+.subtitle_name3 {
+    display: flex;
+
+    margin-right: 1.5rem;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    width: 25%;
+}
+.subtitle {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    margin: 0 26px;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 1%;
+}
+
+.total_amount {
+    margin: 1rem;
+}
+
+.title {
+    margin-left: 45%;
+}
+
+.cart_show {
+    padding: 30px;
+}

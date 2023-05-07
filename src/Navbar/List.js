@@ -1,37 +1,56 @@
 import React from "react";
+import ProductList from "./ProductList";
+import classes from "./List.module.css";
 
-const List=()=>{
-    return(
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-    )
-}
+const AvailableProducts = () => {
+    const productsArr = [
+        {
+            title: "Colors",
 
-export default List;
+            price: 100,
+
+            imageUrl:
+                "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+        },
+
+        {
+            title: "Black and white Colors",
+
+            price: 50,
+
+            imageUrl:
+                "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+        },
+
+        {
+            title: "Yellow and Black Colors",
+
+            price: 70,
+
+            imageUrl:
+                "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
+        },
+
+        {
+            title: "Blue Color",
+
+            price: 100,
+
+            imageUrl:
+                "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
+        },
+    ];
+
+    const productsList = productsArr.map((item) => (
+        <ProductList
+            id={item.title}
+            title={item.title}
+            price={item.price}
+            img={item.imageUrl}
+        />
+    ));
+
+    return <div className={classes.productsList}>{productsList}</div>;
+};
+
+export default AvailableProducts;
