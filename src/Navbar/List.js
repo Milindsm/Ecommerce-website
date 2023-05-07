@@ -5,6 +5,7 @@ import classes from "./List.module.css";
 const AvailableProducts = () => {
     const productsArr = [
         {
+            id: "1",
             title: "Colors",
 
             price: 100,
@@ -14,6 +15,7 @@ const AvailableProducts = () => {
         },
 
         {
+            id: "2",
             title: "Black and white Colors",
 
             price: 50,
@@ -23,6 +25,7 @@ const AvailableProducts = () => {
         },
 
         {
+            id: "3",
             title: "Yellow and Black Colors",
 
             price: 70,
@@ -32,6 +35,7 @@ const AvailableProducts = () => {
         },
 
         {
+            id: "4",
             title: "Blue Color",
 
             price: 100,
@@ -43,7 +47,8 @@ const AvailableProducts = () => {
 
     const productsList = productsArr.map((item) => (
         <ProductList
-            id={item.title}
+        key={item.id}
+        id={item.id}
             title={item.title}
             price={item.price}
             img={item.imageUrl}

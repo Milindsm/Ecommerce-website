@@ -13,13 +13,13 @@ const CartItem = (props) => {
                 />
                 <span>{props.title}</span>
             </span>
-            <span className={classes.price}>{props.price}</span>
+            <span className={classes.price}>{`$${props.price}`}</span>
             <span className={classes.title2}>
                 <input
                     className={classes.quantity}
-                    type="text"
+                    type="number"
                     value={props.quantity}
-                    step="1"
+                   
                 />
                 <button className={classes["btn-remove"]}>REMOVE</button>
             </span>
