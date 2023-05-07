@@ -1,6 +1,6 @@
 import React from "react";
 import ProductList from "./ProductList";
-import classes from "./List.module.css";
+import classes from "./AvailableProducts.module.css"
 
 const AvailableProducts = () => {
     const productsArr = [

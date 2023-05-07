@@ -6,11 +6,14 @@ import CartProduct from "./CartProduct";
 const Cart = () => {
     const [showCart, setShowCart] = useState(false);
     const showCartHandler = () => {
-        setShowCart((prevVAl) => !prevVAl);
+        setShowCart(true);
+    };
+    const hideCartHandler = () => {
+        setShowCart(false);
     };
     return (
         <div>
-            {showCart && <CartProduct/>}
+            {showCart && <CartProduct onClose={hideCartHandler} />}
             <button onClick={showCartHandler} className={classes.cart}>
                 Cart
             </button>

@@ -15,16 +15,17 @@
     display: flex;
     justify-content: center;
     list-style: none;
+    position: relative;
 }
 .head {
     background-color: gray;
     color: white;
-    padding: 5px;
+    padding:4rem;
     font-size: 45px;
     text-align: center;
 }
 
-.header a {
+.navlist {
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -36,7 +37,7 @@
     color: #36c3f1;
     font-size: 18px;
     right: 1%;
-    top: -3px;
+    top: 0px;
     cursor: pointer;
 }
 
