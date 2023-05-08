@@ -17,13 +17,7 @@
     list-style: none;
     position: relative;
 }
-.head {
-    background-color: gray;
-    color: white;
-    padding:4rem;
-    font-size: 45px;
-    text-align: center;
-}
+
 
 .navlist {
     color: white;

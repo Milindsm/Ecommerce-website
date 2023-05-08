@@ -1,0 +1,34 @@
+.head {
+    background-color: gray;
+    color: white;
+    padding: 4rem;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.head .album {
+    display: block;
+    border: 2px solid skyblue;
+    padding: 15px 30px;
+    font-size: 23px;
+    font-weight: 200;
+    margin: 10px auto;
+    background: inherit;
+    cursor: pointer;
+    color: white;
+}
+
+.head .play-button {
+    cursor: pointer;
+    align-items: center;
+    display: block;
+    border: 2px solid skyblue;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 200;
+    margin: 20px auto;
+    background: inherit;
+    color: skyblue;
+}
