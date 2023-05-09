@@ -4,16 +4,16 @@ import classes from './Movies.module.css'
 
 const Movies=(props)=>{
     return(
-        <ul className={classes["tour-item"]}>
+        <li className={classes["tour-item"]}>
             {props.movies.map((movie)=>(
                 <Movie
                 title={movie.title}
-                releaseDate={movie.release}
+                releaseDate={movie.releaseDate}
                 openingText={movie.openingText}
                 />
             ))
             }
-        </ul>
+        </li>
     )
 }
 

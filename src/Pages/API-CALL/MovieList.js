@@ -16,24 +16,34 @@ const MovieList = () => {
         setError(null);
     try{
 
-        const response = await fetch("https://swapi.dev/api/films")
+        const response = await fetch("https://644a3edd79279846dce297b5.mockapi.io/order-list")
         const data = await response.json();
 
             if(!response.ok){
                 throw new Error('Something went wrong!')
             }
+
+            const loadedMovie=[];
+            for(const key in data){
+                loadedMovie.push({
+                    id:key,
+                    title:data[key].title,
+                    openingText:data[key].openingText,
+                    releaseDate: data[key].releaseDate
+                })
+            }
           
-            const transformedMovies = data.results.map((movieData) => {
-              return {
-                id: movieData.episode_id,
-                title: movieData.title,
-                openingText: movieData.opening_crawl,
-                releaseDate: movieData.release_date,
-              };
-            });
-            setMovies(transformedMovies);
+            // const transformedMovies = data.results.map((movieData) => {
+            //   return {
+            //     id: movieData.episode_id,
+            //     title: movieData.title,
+            //     openingText: movieData.opening_crawl,
+            //     releaseDate: movieData.release_date,
+            //   };
+            // });
+            setMovies(loadedMovie);
             
-            console.log(transformedMovies);
+            console.log(loadedMovie);
         
   }catch (error){
         setError(error.message);
@@ -45,9 +55,19 @@ useEffect(()=>{
     fetchMovieHandler();
   },[fetchMovieHandler])
 
-  const addmovieHandler=(movie)=>{
-    console.log(movie);
+  async function addmovieHandler(movie){
+    const response = await fetch('https://644a3edd79279846dce297b5.mockapi.io/order-list',{
+        method:'POST',
+        body: JSON.stringify(movie),
+        headers: {
+            'Content-Type':'application/json'
+        }
+    });
+    const data = await response.json();
+    console.log(data);
   }
+
+  
 
     let content = <p>Found no Movies.</p>
     
