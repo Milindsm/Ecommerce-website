@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useCallback } from "react";
-
+import AddMovie from "./AddMovie";
 import Movies from "./Movies";
 import classes from "./Movies.module.css";
 import Header from "../../Navbar/Header";
@@ -45,6 +45,10 @@ useEffect(()=>{
     fetchMovieHandler();
   },[fetchMovieHandler])
 
+  const addmovieHandler=(movie)=>{
+    console.log(movie);
+  }
+
     let content = <p>Found no Movies.</p>
     
     if(movies.length > 0){
@@ -59,6 +63,9 @@ useEffect(()=>{
   return (
     <React.Fragment>
       <Header />
+      <sction>
+        <AddMovie onAddMovie={addmovieHandler}/>
+      </sction>
       <section>
         <button className={classes.button} onClick={fetchMovieHandler}>
           Click me to Fetch the ProductList

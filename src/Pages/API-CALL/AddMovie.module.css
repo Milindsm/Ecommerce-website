@@ -1,0 +1,52 @@
+.control {
+  margin: 1rem 0;
+  
+}
+
+.formclass{
+  margin-top: 3rem;
+ padding: 10px;
+  box-sizing: border-box;
+  background-color: gray;
+  border: 2px solid black;
+  
+  
+}
+
+.control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.control input,
+.control textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.2rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.control input:focus,
+.control textarea:focus {
+  outline: none;
+  border-color: #230052;
+}
+
+.button {
+  cursor: pointer;
+  padding: 8px;
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  background: purple;
+  
+  margin: auto;
+  margin-top: 2rem;
+  
+}
