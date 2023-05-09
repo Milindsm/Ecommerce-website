@@ -7,6 +7,8 @@ import Home from './Pages/Home/Home';
 import About from './Pages/AboutPage/About';
 
 import CartProvider from './Navbar/Store/CartProvider';
+import MovieList from './Pages/API-CALL/MovieList';
+
 
 
 function App() {
@@ -16,8 +18,9 @@ function App() {
             
             <Routes>
             <Route path="/about" element={<About />} />
-            <Route path="/store" element={<Store/>} />
+            <Route path="/" element={<Store/>} />
             <Route path="/home" element={<Home/>} />
+            <Route path="/movielist" element={<MovieList/>} />
             </Routes>
             
         </CartProvider>

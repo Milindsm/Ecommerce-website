@@ -1,0 +1,26 @@
+.content h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.tour-item {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 8px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    background: purple;
+    text-align: center;
+    margin: auto;
+    margin-top: 5rem;
+    display: flex;
+}

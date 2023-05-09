@@ -27,6 +27,12 @@ const Header = () => {
                                 ABOUT
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink className={classes.navlist} to="/movielist">
+                                MOVIE
+                            </NavLink>
+                        </li>
+                    
                     </section>
                     
 
@@ -38,9 +44,6 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <div className={classes.head}>
-                <h1>The Generics</h1>
-            </div>
         </div>
     );
 };
