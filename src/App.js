@@ -8,6 +8,7 @@ import About from './Pages/AboutPage/About';
 
 import CartProvider from './Navbar/Store/CartProvider';
 import MovieList from './Pages/API-CALL/MovieList';
+import ContactUs from './Pages/Contact/ContactUs';
 
 
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Store/>} />
             <Route path="/home" element={<Home/>} />
             <Route path="/movielist" element={<MovieList/>} />
+            <Route path="/contact" element={<ContactUs/>}/>
             </Routes>
             
         </CartProvider>

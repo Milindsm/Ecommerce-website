@@ -8,7 +8,7 @@ const Movie=(props)=>{
             <h3>{props.releaseDate}</h3>
             <p>{props.openingText}</p>
         </li>
-        <button>Delete</button>
+        <button className={classes.dltbtn}>Delete</button>
         </div>
     )
 }

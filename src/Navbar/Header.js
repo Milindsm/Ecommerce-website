@@ -28,6 +28,11 @@ const Header = () => {
                             </NavLink>
                         </li>
                         <li>
+                            <NavLink className={classes.navlist} to="/contact">
+                                CONTACT US
+                            </NavLink>
+                        </li>
+                        <li>
                             <NavLink className={classes.navlist} to="/movielist">
                                 MOVIE
                             </NavLink>

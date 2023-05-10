@@ -1,0 +1,36 @@
+.form {
+    display: block;
+    margin: 7.9rem auto;
+    width: 30%;
+    max-width: 40rem;
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 7px;
+    border: 1px solid rgb(136, 136, 136);
+}
+
+.form input {
+    width: 100%;
+    margin: 3px;
+    margin-bottom: 7px;
+    border: 1px solid rgb(136, 136, 136);
+    border-radius: 7px;
+    height: 30px;
+}
+.form label {
+    float: lremeft;
+    margin: 3px;
+    font-weight: bolder;
+}
+
+.form button {
+    margin-top: 0.5rem;
+    font: inherit;
+    cursor: pointer;
+    background: #0e92eb;
+    border: 1px solid #0e92eb;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 12px;
+}
