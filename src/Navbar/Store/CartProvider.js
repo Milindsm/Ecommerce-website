@@ -4,6 +4,7 @@ import CartContext from "./Cart-context";
 
 const CartProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
+    const [product, setProduct] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
     const [totalQuantity, setTotalQuantity] = useState(0);
 
@@ -29,12 +30,23 @@ const CartProvider = (props) => {
 
     const removeItemToCartHandler = (id) => {};
 
+    const displayHandler = (item) => {
+        const displayItems = product.filter((i) => {
+            return i.id !== item.id;
+        });
+        if (displayItems) {
+            setProduct([{ ...item }]);
+        }
+    };
+
     const cart_context = {
         listOfItems: cartItems,
+        display: product,
         totalAmount: totalAmount,
         totalQuantity: totalQuantity,
         addItems: addItemToCartHandler,
         removeItems: removeItemToCartHandler,
+        displayItems: displayHandler,
     };
 
     return (
