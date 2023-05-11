@@ -10,17 +10,20 @@ import CartProvider from "./Navbar/Store/CartProvider";
 import MovieList from "./Pages/API-CALL/MovieList";
 import ContactUs from "./Pages/Contact/ContactUs";
 import ProductDetail from "./Navbar/ProductDetails/ProductDetails";
+import Login from "./Pages/LoginPage/Login";
 
 function App() {
   return (
     <CartProvider>
       <Routes>
+        <Route path="/home" element={<Home/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/" element={<Store />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/store" element={<Store />} />
+        <Route path="/" element={<Login />} />
+        
         <Route path="/movielist" element={<MovieList />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/:productId" element={<ProductDetail />}/>
+        <Route path="/store/:productId" element={<ProductDetail />}/>
         
       </Routes>
     </CartProvider>

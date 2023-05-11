@@ -19,7 +19,8 @@ const ProductList = (props) => {
           <h3>{props.title}</h3>
         </div>
         <div className={classes.image}>
-          <Link to={`/${props.id}`}>
+          
+          <Link to={`/store/${props.id}`}>
             <img src={props.img} alt="" onClick={displayHandler} />
           </Link>
         </div>
