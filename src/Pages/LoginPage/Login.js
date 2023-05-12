@@ -7,7 +7,7 @@ import classes from "./Login.module.css"
 import AuthContext from "../../Navbar/Store/AuthContext";
 
 const Login = () => {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [isLogin, setIsLogin] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const emailInputRef = useRef();
@@ -25,10 +25,10 @@ const Login = () => {
         let url;
         if (isLogin) {
             url =
-                "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDWtM33apY0Lsd8CGEt_PkgmfozwSgL7os";
+                "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDdWOmUbfIHSEExB_TT9-vY3pJWH8FcJv8";
         } else {
             url =
-                "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDWtM33apY0Lsd8CGEt_PkgmfozwSgL7os";
+                "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDdWOmUbfIHSEExB_TT9-vY3pJWH8FcJv8";
         }
         fetch(url, {
             method: "POST",
@@ -55,7 +55,7 @@ const Login = () => {
             .then((data) => {
                 auth_ctx.login(data.idToken);
                 console.log(data);
-                history.replace("/store");
+                navigate ("/store");
             })
             .catch((err) => {
                 alert(err.message);

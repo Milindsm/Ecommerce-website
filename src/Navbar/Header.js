@@ -10,7 +10,7 @@ const Header = () => {
   //console.log(cartCtx.totalQuantity);
 
   const authCtx = useContext(AuthContext);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const isLoggedIn = authCtx.isLoggedIn;
   // console.log(cartCtx);
@@ -18,14 +18,22 @@ const Header = () => {
 
   const logoutHandler = () => {
     authCtx.logout();
-    history.replace("/");
+    navigate("/");
   };
 
   return (
     <div>
       <header>
+        
         <div className={classes.header}>
           <section className={classes.navlist}>
+          {!isLoggedIn &&(
+              <li>
+                <NavLink className={classes.navlist} to="/">
+                  LOGIN
+                </NavLink>
+              </li>
+            )}
             {isLoggedIn && (
               <li>
                 <NavLink className={classes.navlist} to="/home">
@@ -37,6 +45,13 @@ const Header = () => {
               <li>
                 <NavLink className={classes.navlist} to="/store">
                   STORE
+                </NavLink>
+              </li>
+            )}
+            {isLoggedIn && (
+              <li>
+                <NavLink className={classes.navlist} to="/movielist">
+                  MOVIE
                 </NavLink>
               </li>
             )}
@@ -54,20 +69,6 @@ const Header = () => {
                 </NavLink>
               </li>
             )}
-            {isLoggedIn && (
-              <li>
-                <NavLink className={classes.navlist} to="/movielist">
-                  MOVIE
-                </NavLink>
-              </li>
-            )}
-            {isLoggedIn && (
-              <li>
-                <NavLink className={classes.navlist} to="/">
-                  LOGIN/CREATE ACCOUNT
-                </NavLink>
-              </li>
-            )}
 
             {isLoggedIn && (
               <li>
@@ -78,7 +79,7 @@ const Header = () => {
                     color: "white",
                     fontSize: "18px",
                     fontFamily: "inherit",
-                    border: "1px solid white",
+                    
                     borderRadius: "3px",
                   }}
                   onClick={logoutHandler}

@@ -16,11 +16,10 @@ function App() {
   return (
     <CartProvider>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home/>} />
         <Route path="/about" element={<About />} />
         <Route path="/store" element={<Store />} />
-        <Route path="/" element={<Login />} />
-        
         <Route path="/movielist" element={<MovieList />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/store/:productId" element={<ProductDetail />}/>

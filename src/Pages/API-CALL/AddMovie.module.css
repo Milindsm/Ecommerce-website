@@ -4,11 +4,17 @@
 }
 
 .formclass{
-  margin-top: 3rem;
- padding: 10px;
-  box-sizing: border-box;
-  background-color: gray;
-  border: 2px solid black;
+  margin-top: 3rem auto;
+  color: white;
+  margin: 7.4rem auto;
+  width: 95%;
+  max-width: 35rem;
+  border-radius: 6px;
+  background-color: purple;
+  border: 1px solid black;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
   
   
 }
@@ -44,9 +50,16 @@
   font-size: 15px;
   font-weight: bold;
   border-radius: 6px;
-  background: purple;
+  background: rgb(12, 2, 12);
   
   margin: auto;
   margin-top: 2rem;
   
+}
+
+.button:hover {
+  background-color: rgb(240, 181, 240);
+  border-color: rgb(41, 6, 41);
+  color: black;
+  font-weight: bold;
 }
