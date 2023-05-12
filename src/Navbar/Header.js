@@ -69,7 +69,6 @@ const Header = () => {
                 </NavLink>
               </li>
             )}
-
             {isLoggedIn && (
               <li>
                 <button
@@ -86,6 +85,13 @@ const Header = () => {
                 >
                   LOGOUT
                 </button>
+              </li>
+            )}
+            {isLoggedIn &&(
+              <li>
+                {<NavLink className={classes.navlist} to="/resetPassword">
+                            Reset Password
+                          </NavLink>}
               </li>
             )}
           </section>

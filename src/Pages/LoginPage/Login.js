@@ -1,10 +1,11 @@
 
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import {useState, useRef, useContext} from "react";
 import Header from "../../Navbar/Header";
 import Footer from "../../Navbar/Footer";
 import classes from "./Login.module.css"
 import AuthContext from "../../Navbar/Store/AuthContext";
+
 
 const Login = () => {
     const navigate = useNavigate();
@@ -17,6 +18,9 @@ const Login = () => {
     const switchAuthModeHandler = () => {
         setIsLogin((prevState) => !prevState);
     };
+
+    
+    
     const submitHandler = (event) => {
         event.preventDefault();
         const enteredEmail = emailInputRef.current.value;
@@ -105,6 +109,7 @@ const Login = () => {
                                 ? "Create new account"
                                 : "Login with existing account"}
                         </button>
+                        
                     </div>
                 </form>
             </section>

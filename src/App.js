@@ -11,6 +11,7 @@ import MovieList from "./Pages/API-CALL/MovieList";
 import ContactUs from "./Pages/Contact/ContactUs";
 import ProductDetail from "./Navbar/ProductDetails/ProductDetails";
 import Login from "./Pages/LoginPage/Login";
+import FortgotPassword from "./Pages/LoginPage/ForgotPassword";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/movielist" element={<MovieList />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/store/:productId" element={<ProductDetail />}/>
+        <Route path="/resetpassword" element={<FortgotPassword/>}/>
         
       </Routes>
     </CartProvider>

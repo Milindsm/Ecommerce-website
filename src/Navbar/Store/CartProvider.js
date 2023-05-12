@@ -28,7 +28,31 @@ const CartProvider = (props) => {
         setCartItems([...cartItems, updatedItem]);
     };
 
-    const removeItemToCartHandler = (id) => {};
+    const removeItemToCartHandler = (id) => {
+        const itemIndex = cartItems.findIndex((item) => {
+            return item.id === id;
+        });
+
+        let selectedItem = cartItems[itemIndex];
+        setTotalAmount(cart_context.totalAmount - selectedItem.price);
+        setTotalQuantity((preQty) => preQty - 1);
+        let updatedItem, updatedItems;
+        if (selectedItem.quantity > 1) {
+            updatedItem = {
+                ...selectedItem,
+                quantity: +selectedItem.quantity - 1,
+            };
+            updatedItems = [...cartItems];
+            updatedItems[itemIndex] = updatedItem;
+            setCartItems(updatedItems);
+            return;
+        } else {
+            updatedItems = cartItems.filter((item) => {
+                return item.id !== id;
+            });
+            setCartItems(updatedItems);
+        }
+    };
 
     const displayHandler = (item) => {
         const displayItems = product.filter((i) => {
