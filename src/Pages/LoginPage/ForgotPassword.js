@@ -3,7 +3,9 @@ import classes from './ForgotPassword.module.css'
 import Footer from "../../Navbar/Footer";
 import Header from "../../Navbar/Header";
 import AuthContext from "../../Navbar/Store/AuthContext";
+import { useNavigate } from "react-router-dom";
 const FortgotPassword = () =>{
+    const navigate = useNavigate();
     const newPasswordInputRef=useRef();
     const authCtx = useContext(AuthContext);
 
@@ -22,7 +24,7 @@ const FortgotPassword = () =>{
                 "Content-Type": "application/json",
             },
         }).then(res=>{
-            
+            navigate ('/')
         })
     }
 return(

@@ -24,10 +24,9 @@ const Header = () => {
   return (
     <div>
       <header>
-        
         <div className={classes.header}>
           <section className={classes.navlist}>
-          {!isLoggedIn &&(
+            {!isLoggedIn && (
               <li>
                 <NavLink className={classes.navlist} to="/">
                   LOGIN
@@ -78,7 +77,7 @@ const Header = () => {
                     color: "white",
                     fontSize: "18px",
                     fontFamily: "inherit",
-                    
+
                     borderRadius: "3px",
                   }}
                   onClick={logoutHandler}
@@ -87,11 +86,13 @@ const Header = () => {
                 </button>
               </li>
             )}
-            {isLoggedIn &&(
+            {isLoggedIn && (
               <li>
-                {<NavLink className={classes.navlist} to="/resetPassword">
-                            Reset Password
-                          </NavLink>}
+                {
+                  <NavLink className={classes.navlist} to="/resetPassword">
+                    Reset Password
+                  </NavLink>
+                }
               </li>
             )}
           </section>
