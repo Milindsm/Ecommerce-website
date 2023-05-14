@@ -13,6 +13,7 @@ import ProductDetail from "./Navbar/ProductDetails/ProductDetails";
 import Login from "./Pages/LoginPage/Login";
 import FortgotPassword from "./Pages/LoginPage/ForgotPassword";
 
+
 function App() {
   return (
     <CartProvider>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/store/:productId" element={<ProductDetail />}/>
         <Route path="/resetpassword" element={<FortgotPassword/>}/>
+        
         
       </Routes>
     </CartProvider>

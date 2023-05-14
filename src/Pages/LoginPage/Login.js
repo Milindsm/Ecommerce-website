@@ -1,5 +1,5 @@
 
-import {useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 import {useState, useRef, useContext} from "react";
 import Header from "../../Navbar/Header";
 import Footer from "../../Navbar/Footer";
@@ -14,6 +14,8 @@ const Login = () => {
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
     const auth_ctx = useContext(AuthContext);
+
+    const isLoggedIn = auth_ctx.isLoggedIn;
 
     const switchAuthModeHandler = () => {
         setIsLogin((prevState) => !prevState);
@@ -58,6 +60,7 @@ const Login = () => {
             })
             .then((data) => {
                 auth_ctx.login(data.idToken);
+                
                 console.log(data);
                 navigate ("/store");
             })
@@ -109,7 +112,11 @@ const Login = () => {
                                 ? "Create new account"
                                 : "Login with existing account"}
                         </button>
-                        
+                        {isLoggedIn && (
+                        <p>
+                            <Link to={'/resetPassword'}>Reset Password?</Link>
+                        </p>
+                        )}
                     </div>
                 </form>
             </section>

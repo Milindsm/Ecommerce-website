@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import React, { useContext } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import CartContext from "./Store/Cart-context";
 import classes from "./Header.module.css";
 import Cart from "./Cart/Cart";
@@ -16,6 +16,40 @@ const Header = () => {
   // console.log(cartCtx);
   console.log(authCtx);
 
+  const [loggedIn, setLoggedIn]=useState(true);
+  const checkForInactivity=()=>{
+    const expireTime = localStorage.getItem("expireTime");
+    if (expireTime<Date.now()){
+      setLoggedIn(false)
+      authCtx.logout();
+      navigate("/");
+    }
+  }
+  const updateExpireTime=()=>{
+    const expireTime=Date.now()+10000;
+    localStorage.setItem("expireTime",expireTime)
+  }
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      checkForInactivity()
+    },5000);
+    return()=>clearInterval(interval);
+  },[]);
+
+  useEffect(()=>{
+    updateExpireTime();
+    window.addEventListener("click",updateExpireTime)
+    window.addEventListener("keypress",updateExpireTime)
+    window.addEventListener("scroll",updateExpireTime)
+    window.addEventListener("mousemove",updateExpireTime)
+    return()=>{
+      window.removeEventListener("click",updateExpireTime)
+    window.removeEventListener("keypress",updateExpireTime)
+    window.removeEventListener("scroll",updateExpireTime)
+    window.removeEventListener("mousemove",updateExpireTime)
+    }
+  },[])
+
   const logoutHandler = () => {
     authCtx.logout();
     navigate("/");
@@ -26,13 +60,7 @@ const Header = () => {
       <header>
         <div className={classes.header}>
           <section className={classes.navlist}>
-            {!isLoggedIn && (
-              <li>
-                <NavLink className={classes.navlist} to="/">
-                  LOGIN
-                </NavLink>
-              </li>
-            )}
+         
             {isLoggedIn && (
               <li>
                 <NavLink className={classes.navlist} to="/home">
@@ -68,6 +96,13 @@ const Header = () => {
                 </NavLink>
               </li>
             )}
+
+<li>
+                <NavLink className={classes.navlist} to="/">
+                  LOGIN
+                </NavLink>
+              </li>
+            
             {isLoggedIn && (
               <li>
                 <button
@@ -86,15 +121,7 @@ const Header = () => {
                 </button>
               </li>
             )}
-            {isLoggedIn && (
-              <li>
-                {
-                  <NavLink className={classes.navlist} to="/resetPassword">
-                    Reset Password
-                  </NavLink>
-                }
-              </li>
-            )}
+             
           </section>
 
           {isLoggedIn && (
