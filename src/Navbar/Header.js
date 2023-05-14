@@ -75,13 +75,7 @@ const Header = () => {
                 </NavLink>
               </li>
             )}
-            {isLoggedIn && (
-              <li>
-                <NavLink className={classes.navlist} to="/movielist">
-                  MOVIE
-                </NavLink>
-              </li>
-            )}
+            
             {isLoggedIn && (
               <li>
                 <NavLink className={classes.navlist} to="/about">
@@ -121,6 +115,13 @@ const Header = () => {
                 </button>
               </li>
             )}
+            {/* {isLoggedIn && (
+              <li>
+                <NavLink className={classes.navlist} to="/movielist">
+                  MOVIE
+                </NavLink>
+              </li>
+            )} */}
              
           </section>
 
@@ -132,6 +133,7 @@ const Header = () => {
               </span>
             </div>
           )}
+
         </div>
       </header>
     </div>

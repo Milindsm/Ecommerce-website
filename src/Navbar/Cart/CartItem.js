@@ -4,13 +4,14 @@ import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
     const cartContext = useContext(CartContext);
+    console.log(props);
 
     const removeItemHandler = (event) => {
         event.preventDefault();
-        cartContext.removeItems(props.id);
+        cartContext.removeItems(props);
     };
     return (
-        <li key={props.key} className={classes.list}>
+        <li className={classes.list}>
             <span className={classes.title1}>
                 <img
                     className={classes.img}
@@ -24,7 +25,7 @@ const CartItem = (props) => {
                 <input
                     className={classes.quantity}
                     type="number"
-                    value={props.quantity}
+                    placeholder={props.quantity}
                    
                 />
                 <button

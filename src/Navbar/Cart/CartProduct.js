@@ -14,12 +14,12 @@ const CartProduct = (props) => {
             {cartContext.listOfItems.map((item) => {
                 return (
                     <CartItem
-                        key={item.id}
-                        id={item.id}
-                        quantity={item.quantity}
-                        imageUrl={item.img}
-                        title={item.title}
-                        price={item.price}
+                        key={item.item.id}
+                        id={item.item.id}
+                        quantity={item.item.quantity}
+                        imageUrl={item.item.img}
+                        title={item.item.title}
+                        price={item.item.price}
                     />
                 );
             })}
