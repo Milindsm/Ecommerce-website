@@ -27,6 +27,7 @@ const ContactUs = () => {
             alert("Please enter all the fields...");
         } else {
             addToList(details);
+            alert("Your response has been recorded :)");
             event.target.reset();
         }
     };
@@ -47,25 +48,26 @@ const ContactUs = () => {
     return (
         <div>
             <Header />
-
-            <div className={classes.form}>
-                <form onSubmit={addContactHandler}>
-                    <div>
-                        <label htmlFor="name">Name</label>
-                        <input id="name" type="text" ref={nameInputRef} />
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input id="email" type="text" ref={emailInputRef} />
-                    </div>
-                    <div>
-                        <label htmlFor="phone">Phone Number</label>
-                        <input id="phone" type="text" ref={phoneInputRef} />
-                    </div>
-
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+            <h2 className={classes.title}> Please fill your details !</h2>
+            <body>
+                <div className={classes.form}>
+                    <form onSubmit={addContactHandler}>
+                        <div>
+                            <label htmlFor="name">Name</label>
+                            <input id="name" type="text" ref={nameInputRef} />
+                        </div>
+                        <div>
+                            <label htmlFor="email">Email</label>
+                            <input id="email" type="text" ref={emailInputRef} />
+                        </div>
+                        <div>
+                            <label htmlFor="phone">Phone Number</label>
+                            <input id="phone" type="text" ref={phoneInputRef} />
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </body>
 
             <Footer />
         </div>

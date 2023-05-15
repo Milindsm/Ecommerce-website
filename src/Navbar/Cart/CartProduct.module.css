@@ -20,6 +20,40 @@
     margin-top: 10px;
     width: 30%;
 }
+.button {
+    margin-top: 15px;
+
+    cursor: pointer;
+    padding: 8px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    background: #149df8;
+}
+
+.button:hover {
+    background-color: #44b6fd;
+}
+
+.button1 {
+    margin-top: 15px;
+    margin-left: 43%;
+    cursor: pointer;
+    padding: 8px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    background: #149df8;
+}
+
+.button1:hover {
+    background-color: #44b6fd;
+}
+
 .subtitle_name3 {
     display: flex;
 

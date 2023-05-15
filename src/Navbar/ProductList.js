@@ -6,12 +6,17 @@ import classes from "./ProductList.module.css";
 const ProductList = (props) => {
   const cartCtx = useContext(CartContext);
   const addToCartHandler = () => {
-    cartCtx.addItems(props);
+    if (props.quantity >= 1) {
+      cartCtx.addItems({
+          ...props,
+          quantity: Number(props.quantity) + 1,
+      });
+  } else {
+      cartCtx.addItems({ ...props, quantity: "1" });
+  }
   };
 
-  const displayHandler = () => {
-    cartCtx.displayItems(props);
-  };
+  
   return (
     <div className={classes.list}>
       <li key={props.id}>
@@ -21,7 +26,7 @@ const ProductList = (props) => {
         <div className={classes.image}>
           
           <Link to={`/store/${props.id}`}>
-            <img src={props.img} alt="" onClick={displayHandler} />
+            <img src={props.img} alt="" />
           </Link>
         </div>
         <div className={classes.details}>

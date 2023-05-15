@@ -1,6 +1,6 @@
 .form {
     display: block;
-    margin: 7.9rem auto;
+    margin: 3.7rem auto;
     width: 30%;
     max-width: 40rem;
     text-align: center;
@@ -8,6 +8,11 @@
     padding: 2rem;
     border-radius: 7px;
     border: 1px solid rgb(136, 136, 136);
+}
+
+.title {
+    margin-top: 5.1rem;
+    text-align: center;
 }
 
 .form input {
